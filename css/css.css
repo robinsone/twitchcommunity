@@ -83,7 +83,7 @@ header {
     text-align: center;
     color: #fff;
     background: #262626;
-    /*background-image: url("../img/HeaderBackground.jpg");*/
+    background-image: url("../img/HeaderBackground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     
