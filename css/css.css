@@ -175,6 +175,9 @@ header .intro-text .skills {
     background-color: #6441a5;
     color: #F1F1F1;
 }
+.navbar-default a:hover {
+    color: #262626;
+}
 
 section {
     padding: 100px 0;
