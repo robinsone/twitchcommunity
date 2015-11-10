@@ -83,7 +83,7 @@ header {
     text-align: center;
     color: #fff;
     background: #262626;
-    /*background-image: url("../img/HeaderBackground.jpg");*/
+    background-image: url("../img/HeaderBackground.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -174,6 +174,9 @@ header .intro-text .skills {
     border: 0;
     background-color: #6441a5;
     color: #F1F1F1;
+}
+.navbar-default a:hover {
+    color: #262626;
 }
 
 section {
