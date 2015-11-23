@@ -51,7 +51,7 @@ function isLive() {
                 }else{
                     $('a', li).attr('data-sort', 'b')
                 }
-                isSorted();
+                
                 console.log(data.stream?'LIVE NOW':'OFFLINE');
             });
             
@@ -66,7 +66,44 @@ function isSorted() {
     console.log('Sorted!!');
 }
 
+var sortVideos = function() {
+    console.log('Video Sorting!!');
+    tinysort('#videos',{selector:'div',attr:'data-sort'});
+    console.log('Video Sorted!!');
+}
+
+var getHighlights = function() {
+    var def = $.Deferred();
+     $('#streamers').each(function () {
+        var list = $(this).find('li');
+        console.log(list);
+        list.each(function(index, li){
+            
+            $.getJSON('https://api.twitch.tv/kraken/channels/'+ $(li).attr('data-src')+'/videos').done(function(data){
+                
+                $.each(data.videos, function(index, element) {
+                    // <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    //     <a class="thumbnail" href="#">
+                    //         <img class="img-responsive" src="http://placehold.it/400x225" alt="">
+                    //     </a>
+                    // </div>
+                    console.log(element.title);
+                    $('#videos').append('<div class="col-lg-3 col-md-4 col-xs-6 thumb" data-sort="'+ element._id +'"><a class="thumbnail" href="'+ element.url +'"><img class="img-responsive" src="'+ element.preview +'" alt=""></a></div>');
+                    
+                });
+                
+                
+            });
+            
+        });
+        def.resolve();
+    });  
+    return def;
+}
+
 $(document).ready(function() {
     console.log('Document Ready');
     isLive();
+    isSorted();
+    getHighlights().done(sortVideos());
 });

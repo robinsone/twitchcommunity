@@ -267,6 +267,16 @@ section.success a:hover{
     z-index: 2;
 }
 
+
+#highlights {
+    z-index: 2;
+    background-color: #F1F1F1;
+}
+
+#highlights hr.star-primary {
+    border-color: #262626;
+}
+
 @media(min-width:767px) {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
