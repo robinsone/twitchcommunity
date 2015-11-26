@@ -22,7 +22,7 @@ a:focus,
 a:active,
 a.active {
     outline: 0;
-    color: #262626;
+    color: #454540;
 }
 
 h1,
@@ -63,7 +63,7 @@ hr.star-light {
 
 hr.star-light:after {
     color: #fff;
-    background-color: #262626;
+    background-color: #454540;
 }
 
 hr.star-primary {
@@ -71,7 +71,7 @@ hr.star-primary {
 }
 
 hr.star-primary:after {
-    color: #2c3e50;
+    color: #454540;
     background-color: #fff;
 }
 
@@ -82,8 +82,8 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #262626;
-    background-image: url("../img/HeaderBackground.jpg");
+    background: #454540;
+    background-image: url('../img/BFG_LogovMetal.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -96,7 +96,7 @@ header .container {
 
 header img {
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 10px;
 }
 
 header .intro-text .name {
@@ -172,7 +172,7 @@ header .intro-text .skills {
 .navbar-default,
 .navbar-inverse {
     border: 0;
-    background-color: #6441a5;
+    background-color: #454540;
     color: #F1F1F1;
 }
 .navbar-default a:hover {
@@ -233,7 +233,7 @@ section.success a:hover{
     width: 100%;
     height: 100%;
     opacity: 0;
-    background: rgba(24,188,156,.9);
+    background: #454540;
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
@@ -450,7 +450,7 @@ footer .footer-below {
     width: 1px;
     height: 75px;
     margin-left: 35px;
-    background-color: #2c3e50;
+    background-color: #454540;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
@@ -460,7 +460,7 @@ footer .footer-below {
     z-index: 1052;
     width: 1px;
     height: 75px;
-    background-color: #2c3e50;
+    background-color: #454540;
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
@@ -475,7 +475,7 @@ footer .footer-below {
 .nav-pills > li.active > a:hover,
 .nav-pills > li.active > a:focus {
   color: #ffffff;
-  background-color: #6441A5;
+  background-color: #454540;
 }
 
 .video-container{
