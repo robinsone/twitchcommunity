@@ -83,7 +83,7 @@ header {
     text-align: center;
     color: #fff;
     background: #454540;
-    background-image: url('../img/stonebackground.jpg');
+    background-image: url('../img/Industrial-metal-background-000013405695_Large.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     
@@ -516,4 +516,33 @@ section.highlights a.active {
 section.highlights a:hover{
     outline: 0;
     color: #454540;
+}
+
+
+section.seperater {
+    text-align: center;
+    color: #454540;
+    background: #F1F1F1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+section.seperater .intro-text .name {
+    display: block;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+section.seperater .intro-text .skills {
+    font-size: 1.35em;
+    font-weight: 400;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin: auto 0;
+}
+
+section.portfolio h2 {
+    color: #262626;
 }
