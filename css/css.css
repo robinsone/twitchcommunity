@@ -493,3 +493,27 @@ footer .footer-below {
     width: 100%;
     height: 100%;
 }
+
+section.highlights {
+    color: #fff;
+    background: #454540;
+}
+
+section.highlights .thumbnail {
+    background: #262626;
+    border-color: #454540;
+}
+
+
+section.highlights a,
+section.highlights a:focus,
+section.highlights a:active,
+section.highlights a.active {
+    outline: 0;
+    color: #F1F1F1;
+}
+
+section.highlights a:hover{
+    outline: 0;
+    color: #454540;
+}
