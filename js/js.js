@@ -55,7 +55,29 @@ function isLive() {
                 console.log(data.stream?'LIVE NOW':'OFFLINE');
             });
             
-        })
+        });
+        // isSorted();
+    });
+}
+
+function highlights() {
+    $('#streamers').each(function () {
+        var list = $(this).find('li');
+        console.log(list);
+        list.each(function(index, li){
+            $.getJSON('https://api.twitch.tv/kraken/channels/'+ $(li).attr('data-src') + '/videos?limit=3').done(function(data){
+                    $.each(data.videos, function(i, item) {
+                        if (item.preview.toLowerCase().search("archive") == -1){
+                        console.log('Video Title: ' + item.title);
+                        var value = item.preview; // value = 9.61 use $("#text").text() if you are not on select box...
+                        value = value.replace("320x240.jpg", "256x144.jpg"); // value = 9:61
+                        $('#highlights-container').append('<div class="col-lg-3 col-md-4 col-xs-6 thumb"><a class="thumbnail" data-sort="'+ item.created_at +'" href="'+ item.url +'"><img class="img-responsive" src="'+ value +'"></a></div>');
+                        isHighlightSorted();
+                        }
+                    });
+            });
+            
+        });
         // isSorted();
     });
 }
@@ -66,7 +88,14 @@ function isSorted() {
     console.log('Sorted!!');
 }
 
+function isHighlightSorted() {
+    console.log('Before Sorting highlights!!');
+    tinysort('div#highlights-container>div',{selector:'a',attr:'data-sort', order:'desc'});
+    console.log('Sorted highlights!!');
+}
+
 $(document).ready(function() {
     console.log('Document Ready');
     isLive();
+    highlights();
 });
