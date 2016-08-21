@@ -33,8 +33,31 @@ $('.navbar-collapse ul li a').click(function () {
 // Show our element, then call our callback
 $('.tabbable div a').click(function (e) {
     console.log($(this).attr('data-src'));
-    $('.video-container').html("<iframe  src='" + $(this).attr('data-src') + "' frameborder='0' scrolling='no' allowfullscreen=''></iframe>")
+	var stream_src = $(this).attr('data-src');
+	var channel_name = /\?.*channel=([^&]+)/.exec(stream_src)[1];
+    $('.video-container').html("<iframe id='stream-video' src='" + stream_src + "' frameborder='0' scrolling='no' allowfullscreen=''></iframe><iframe id='chat_embed' frameborder='0' scrolling='no' src='http://www.twitch.tv/" + channel_name + "/chat'></iframe>");
 });
+
+$('#streamers').children().each(function() {
+	$(this).find("h2").after('\
+	<h3>\
+		<svg class="svg-glyph_live" height="16px" version="1.1" viewBox="0 0 16 16" width="16px" x="0px" y="0px">\
+			<path clip-rule="evenodd" d="M11,14H5H2v-1l3-3h2L5,8V2h6v6l-2,2h2l3,3v1H11z" fill-rule="evenodd"></path>\
+		</svg>\
+		<span class="viewers"></span>\
+		<svg class="svg-glyph_followers" height="16px" version="1.1" viewBox="0 0 16 16" width="16px" x="0px" y="0px">\
+			<path style="fill: #a49fad;" clip-rule="evenodd" d="M8,13.5L1.5,7V4l2-2h3L8,3.5L9.5,2h3l2,2v3L8,13.5z" fill-rule="evenodd"></path>\
+		</svg>\
+		<span class="followers"></span>\
+	</h3>');
+});
+
+function updateChannelInfo() {
+	$('#streamers').children().each(function() {
+		var channel = $(this).data('src');
+		$.getJSON('https://api.twitch.tv/kraken/streams/' + channel).done(function(data) {console.log(data);});
+	});
+}
 
 function isLive() {
     console.log("isLIVE");
@@ -85,12 +108,16 @@ function Images() {
             $.getJSON('https://api.twitch.tv/kraken/channels/' + $(listItem).attr('data-src')).done(function (data) {
                 console.log('img: ' + data.logo);
                 $(listItem).find('img').attr('src', data.logo);
+				$(listItem).find('h3 span.followers').html(data.followers);
             });
 
             $.getJSON('https://api.twitch.tv/kraken/streams/' + $(listItem).attr('data-src')).done(function (data) {
               if (data.stream) {
-                $(listItem).find('a').append('<span>Live</span>');
-              }
+                //$(listItem).find('a').append('<span>Live</span>');
+				$(listItem).addClass('live').find('h3 span.viewers').html(data.stream.viewers);
+              } else {
+				$(listItem).find('h3 span.viewers').html('<span style="color:#bbb">Offline</span>');
+			  }
               isSorted();
             });
 

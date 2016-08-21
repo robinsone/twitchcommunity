@@ -496,11 +496,19 @@ footer .footer-below {
     overflow: hidden;
 }
 
-.video-container iframe {
+.video-container iframe#stream-video {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 70%;
+    height: 100%;
+}
+
+.video-container iframe#chat_embed {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
     height: 100%;
 }
 
@@ -570,14 +578,36 @@ section.portfolio h2 {
 
 #streamers h2 {
     position: absolute;
-    top: 120px;
-    left: 10;
+    top: 10px;
     font-size: 15px;
-    background-color: rgba(0,0,0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     padding: 10px;
     color: #ffffff;
 }
 
+#streamers h3 {
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    font-size: 12px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 1px 8px 5px 5px;
+    color: #ffffff;
+}
+
+#streamers h3 svg {
+	position: relative;
+	top: 4px;
+}
+
+#streamers div .svg-glyph_live {
+	 fill: #a49fad;
+}
+
+#streamers div.live .svg-glyph_live {
+	 fill: #fc3636;
+}
+/*
 #streamers span {
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     position: absolute;
@@ -587,7 +617,7 @@ section.portfolio h2 {
     color: #fff;
     background-color: rgba(255, 0 , 0, 0.5)
 }
-
+*/
 /*#streamers h2 span {
    color: white;
    font: bold 24px/45px Helvetica, Sans-Serif;
