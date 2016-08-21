@@ -52,13 +52,6 @@ $('#streamers').children().each(function() {
 	</h3>');
 });
 
-function updateChannelInfo() {
-	$('#streamers').children().each(function() {
-		var channel = $(this).data('src');
-		$.getJSON('https://api.twitch.tv/kraken/streams/' + channel).done(function(data) {console.log(data);});
-	});
-}
-
 function isLive() {
     console.log("isLIVE");
     $('#streamers').children().each(function (index, item) {
