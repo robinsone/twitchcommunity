@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/twitchcommunity/precache-manifest.23c50a631bc0a24507c82948424b3e0d.js"
+  "/twitchcommunity/precache-manifest.af56bab60aecb54bffae35e5bb3dc074.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "vue-bootstrap-boilerplate"});

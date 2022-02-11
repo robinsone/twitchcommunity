@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/twitchcommunity/css/app.d2dbd649.css"
   },
   {
-    "revision": "2184fc59e9bb3a283ebf",
+    "revision": "a370eeebf0e60978990e",
     "url": "/twitchcommunity/css/home.39b553fe.css"
   },
   {
@@ -24,7 +24,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/twitchcommunity/img/vue-boilerplates.svg"
   },
   {
-    "revision": "c9e2eb3e340d07993d73fb51501bbf7a",
+    "revision": "b2fc5f30deb0589a0a7a93eb6814e704",
     "url": "/twitchcommunity/index.html"
   },
   {
@@ -40,12 +40,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/twitchcommunity/js/chunk-vendors~2a42e354.08ed046c.js"
   },
   {
-    "revision": "2184fc59e9bb3a283ebf",
-    "url": "/twitchcommunity/js/home.826ca097.js"
+    "revision": "a370eeebf0e60978990e",
+    "url": "/twitchcommunity/js/home.05b6b9f5.js"
   },
   {
-    "revision": "ec7b2318fb30b663bbbb",
-    "url": "/twitchcommunity/js/runtime~app.ec1e521a.js"
+    "revision": "2fb24ab3be8f99a1f613",
+    "url": "/twitchcommunity/js/runtime~app.3951c7a2.js"
   },
   {
     "revision": "23411d5f7e03ceb19402",
